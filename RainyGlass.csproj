@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <ApplicationHighDpiMode>PerMonitorV2</ApplicationHighDpiMode>
+    <AssemblyName>APRG</AssemblyName>
+    <Version>1.0.0</Version>
+    <Product>Anti-Productivity RainyGlass</Product>
+    <Authors>DoraNeko</Authors>
+    <Company>DoraNeko</Company>
+    <Description>Click-through rain-on-glass overlay for Windows desktops.</Description>
+    <Copyright>Copyright (c) 2026 DoraNeko</Copyright>
+    <!-- 配布バイナリにローカルのフォルダパスを埋め込まない -->
+    <PathMap>$(MSBuildProjectDirectory)=/src/RainyGlass</PathMap>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Shaders.hlsl" LogicalName="Shaders.hlsl" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Vortice.D3DCompiler" Version="3.8.3" />
+    <PackageReference Include="Vortice.Direct3D11" Version="3.8.3" />
+    <PackageReference Include="Vortice.DirectComposition" Version="3.8.3" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,19 @@
+# Build output
+bin/
+obj/
+publish/
+*.user
+*.suo
+.vs/
+.vscode/
+.idea/
+
+# Runtime log (written next to the exe)
+*.log
+
+# Local reference material / captures (keep out of the repository)
+Ref/
+*.mov
+*.mp4
+capture*.png
+snap*.png

@@ -175,19 +175,9 @@ sealed class TrayContext : ApplicationContext
 
     static Icon MakeIcon()
     {
-        using var bmp = new Bitmap(32, 32);
-        using (var g = Graphics.FromImage(bmp))
-        {
-            g.SmoothingMode = SmoothingMode.AntiAlias;
-            using var path = new GraphicsPath();
-            path.AddBezier(16, 2, 10, 12, 6, 16, 6, 21);
-            path.AddArc(6, 11, 20, 20, 180, -180);
-            path.AddBezier(26, 21, 26, 16, 22, 12, 16, 2);
-            using var brush = new LinearGradientBrush(new Rectangle(0, 0, 32, 32), Color.FromArgb(150, 210, 255), Color.FromArgb(30, 110, 200), 90f);
-            g.FillPath(brush, path);
-            g.FillEllipse(Brushes.White, 11, 17, 5, 6);
-        }
-        return Icon.FromHandle(bmp.GetHicon());
+        // 埋め込んだ .ico から、トレイ用の大きさ (DPI に応じて 16〜32px) を選ぶ
+        using var s = System.Reflection.Assembly.GetExecutingAssembly().GetManifestResourceStream("APRG.ico")!;
+        return new Icon(s, SystemInformation.SmallIconSize);
     }
 }
 

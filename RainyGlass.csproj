@@ -9,6 +9,7 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <ApplicationHighDpiMode>PerMonitorV2</ApplicationHighDpiMode>
     <AssemblyName>APRG</AssemblyName>
+    <ApplicationIcon>Assets\APRG.ico</ApplicationIcon>
     <Version>1.0.0</Version>
     <Product>Anti-Productivity RainyGlass</Product>
     <Authors>DoraNeko</Authors>
@@ -22,6 +23,7 @@
 
   <ItemGroup>
     <EmbeddedResource Include="Shaders.hlsl" LogicalName="Shaders.hlsl" />
+    <EmbeddedResource Include="Assets\APRG.ico" LogicalName="APRG.ico" />
   </ItemGroup>
 
   <ItemGroup>
